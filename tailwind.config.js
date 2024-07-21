@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    fontFamily: {
+      sans: ['Montserrat']
+    },
     extend: {
       backgroundImage: {
         'login-bg': "url('assets/images/backgroundImg.jpg')",

@@ -5,3 +5,7 @@
 #header {
   background-color: green;
 }
+
+body.modal-open {
+  overflow: hidden;
+}

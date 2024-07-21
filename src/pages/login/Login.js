@@ -23,7 +23,7 @@ const Login = () => {
         const accessToken = loginData.accessToken;
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('email', userData.email);
-        navigate('/', { state: { token: accessToken } });
+        navigate('/dashboard', { state: { token: accessToken } });
     }
 
     return (

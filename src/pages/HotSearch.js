@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const HotSearch = () => {
+const HotSearch = ({ placeholder, styles }) => {
   const [searches, setSearches] = useState([]);
   const [filter, setFilter] = useState('');
 
@@ -29,13 +29,19 @@ const HotSearch = () => {
 
   return (
     <>
-      <input
-        type="text"
-        value={filter}
-        onChange={handleFilterChange}
-        className="w-full p-2 border border-gray-300 rounded-5"
-        style={{ marginTop: 10 }}
-      />
+      <div className='relative'>
+        <input
+          type="text"
+          value={filter}
+          onChange={handleFilterChange}
+          placeholder={placeholder}
+          className="w-full px-4 py-2 border-gray-300 rounded-5"
+          style={{ ...styles }}
+        />
+        <div className='h-full absolute right-3 top-0 flex items-center'>
+          <i className="bi bi-search"></i>
+        </div>
+      </div>
       {filter && (
         <ul className="list-none p-0">
           {filteredSearches.map((search, index) => (

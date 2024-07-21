@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 // import { Toaster, toast } from 'react-hot-toast';
 import { registerUser } from '../../api/discover.js';
 
 const Signup = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [userData, setUserData] = useState({
         // name: "",
-        email: "",
+        email: location.state?.email || "",
         password: "",
         // cpassword: ""
     });

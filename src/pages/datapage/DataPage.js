@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Table, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import NavBar from "../../NavBar";
 import DropDown from "../DropDown";
 import './DataPage.css';
+import LeftSideBar from "../../LeftSideBar";
+import DashBoardLogo from "../../DashBoardLogo";
 
 const DataPage = () => {
     const location = useLocation();
@@ -29,9 +30,20 @@ const DataPage = () => {
     };
 
     return (
-        <div className="h-screen">
-            <NavBar categoryAmountMap={categoryAmountMap} />
-            <div className="mt-20 p-4">
+        <div className="h-screen flex">
+            <LeftSideBar />
+            <div className="p-3 w-full overflow-scroll">
+                <div className="mb-4">
+                    <DashBoardLogo />
+                </div>
+                <div className="flex justify-between bg-[#F2F3F9] p-3 rounded-t-md">
+                    <div className="text-[#72777F]">
+                        Transactions
+                    </div>
+                    <div className="text-[#72777F]">
+                        All Transactions
+                    </div>
+                </div>
                 <Table striped bordered hover responsive className="p-4">
                     <thead>
                         <tr className="align-baseline" id="header">
